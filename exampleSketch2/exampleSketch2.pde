@@ -31,13 +31,16 @@ void draw() {
 }
 
 void mouseMoved() {
-  if (frameCount % 10 == 0) {
+ // if (frameCount % 10 == 0) {
     int h = int(millis() / 250) % 100;
     int v = 50 + ((int((millis() / 5))) % 50);
     println(v);
     color c = color(h, 100, v);
-    circles.add(new circle(mouseX, height / 2 + mouseY, c));
-  }
+    // circles.add(new circle(mouseX, height / 2 + mouseY, c));
+  // }
+  noStroke();
+  fill(c);
+  ellipse(mouseX, mouseY + height / 2, 20,20);
 }
 void mousePressed() {
   println(mouseX + " , " + mouseY);

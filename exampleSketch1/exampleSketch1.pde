@@ -15,14 +15,18 @@ void setup() {
 
 void draw() {
   noStroke();
+
   for (int i = 0; i < circles.size(); i++) {
     circle c = circles.get(i);
     c.update();
-    if (c.r > height / 2) {
+    if (c.r > width / 2) {
       circles.remove(i);
     }
   }
+
+
   image(img, 0, 50, img.width, img.height);
+
   for (ledStrip l : leds) l.update();
   strokeWeight(50);
   stroke(0);
@@ -38,15 +42,17 @@ void draw() {
 }
 
 void mouseMoved() {
-  if (dist(260, 192, mouseX, mouseY) < 30 ||
-    dist(647, 147, mouseX, mouseY) < 30 ||
-    dist(905, 267, mouseX, mouseY) < 30 ||
-    dist(1151, 245, mouseX, mouseY) < 30) {
-    int h = int(millis() / 250) % 100;
-    int s = 50 + ((int((millis() / 5))) % 50);
-    //  println("hue: " + h + " sat: " + s); 
-    color c = color(h, 100, s);
-    circles.add(new circle(mouseX, height / 2 + mouseY, c));
+  if (frameCount % 20 == 0) {
+    if (dist(260, 192, mouseX, mouseY) < 30 ||
+      dist(647, 147, mouseX, mouseY) < 30 ||
+      dist(905, 267, mouseX, mouseY) < 30 ||
+      dist(1151, 245, mouseX, mouseY) < 30) {
+      int h = int(millis() / 250) % 100;
+      int a = ((int((millis() / 5))) % 100);
+      //  println("hue: " + h + " sat: " + s); 
+      color c = color(h, 100, 100);
+      circles.add(new circle(mouseX, height / 2 + mouseY, c, a));
+    }
   }
 }
 void mousePressed() {
