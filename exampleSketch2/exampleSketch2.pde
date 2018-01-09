@@ -40,7 +40,7 @@ void mouseMoved() {
   // }
   noStroke();
   fill(c);
-  ellipse(mouseX, mouseY + height / 2, 20,20);
+  ellipse(mouseX, mouseY + height / 2, 50,50);
 }
 void mousePressed() {
   println(mouseX + " , " + mouseY);

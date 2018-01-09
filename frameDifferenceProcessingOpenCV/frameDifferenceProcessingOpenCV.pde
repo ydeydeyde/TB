@@ -19,6 +19,7 @@ void setup() {
 }
 
 void draw() {
+  background(200);
   //Update OpenCV object with latest from camera
   opencv.loadImage(video);
   opencv.updateBackground();
@@ -37,7 +38,7 @@ void draw() {
   }
 
   scale(0.5,0.5);
-  image(overlay, 0,0);
+  //image(overlay, 0,0);
 }
 
 void captureEvent(Capture c) {
