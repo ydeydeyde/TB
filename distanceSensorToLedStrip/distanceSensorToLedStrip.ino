@@ -4,7 +4,7 @@
 #define NUM_LEDS 54
 #define BRIGHTNESS 255
 
-Adafruit_NeoPixel strip1 = Adafruit_NeoPixel(NUM_LEDS, PIN1, NEO_GRBW + NEO_KHZ800);
+Adafruit_NeoPixel strip1 = Adafruit_NeoPixel(NUM_LEDS, PIN1, NEO_GRB + NEO_KHZ800);
 
 
 // defines pins numbers
