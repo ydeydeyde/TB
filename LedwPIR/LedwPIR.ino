@@ -3,7 +3,7 @@
 #define PIN_1 8
 Adafruit_NeoPixel strip1 = Adafruit_NeoPixel(NUMPIX, PIN_1, NEO_RGBW + NEO_KHZ800);
 
-int inputPin = 12;               // choose the input pin (for PIR sensor)
+int inputPin = 11;               // choose the input pin (for PIR sensor)
 int pirState = LOW;             // we start, assuming no motion detected
 int val = 0;                    // variable for reading the pin status
 
